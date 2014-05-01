@@ -1,8 +1,9 @@
 .SUFFIXES: .md .html
 
 mdfiles=        $(shell find . -name \*.md)
+htmlfiles=	$(mdfiles:.md=.html)
 
-all:            $(mdfiles)
+all:            $(htmlfiles)
 
 .md.html:
 		markdown $*.md > $*.html
